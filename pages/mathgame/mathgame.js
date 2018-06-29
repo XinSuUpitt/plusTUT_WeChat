@@ -99,7 +99,6 @@ Page({
 
   drawCircle2: function(step) {
     var context = wx.createCanvasContext('canvasProgress2');
-    // 设置渐变
     var gradient = context.createLinearGradient(110, 55, 55, 110);
     gradient.addColorStop("0", "#2661DD");
     gradient.addColorStop("0.5", "#40ED94");
@@ -116,7 +115,6 @@ Page({
   },
 
   countInterval: function () {
-    // 设置倒计时 定时器 每100毫秒执行一次，计数器count+1 ,耗时6秒绘一圈
     this.countTimer = setInterval(() => {
       if (this.data.count <= 50) {
         /* 绘制彩色圆环进度条  
@@ -192,7 +190,6 @@ Page({
 
 var total_micro_second = 5 * 1000;
 
-/* 毫秒级倒计时 */
 function countdown(that) {
   that.setData({
     clock: dateformat(total_micro_second)
