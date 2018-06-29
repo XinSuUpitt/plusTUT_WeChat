@@ -1,0 +1,183 @@
+.math-container {
+  display: flex;
+  flex-direction: column;
+  height: 750px;
+  background-color: #78968B;
+}
+.progress_box{
+  position: relative;
+  width:80px;
+  height: 80px;  
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+.progress_bg{
+  position: absolute;
+  background-color: #78968B;
+  width:80px;
+  height: 80px; 
+}
+.progress_canvas{ 
+  width:80px;
+  height: 80px; 
+} 
+
+.progress_box2{
+  position: relative;
+  width:120px;
+  height: 120px;  
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+.progress_bg2{
+  position: absolute;
+  background-color: #78968B;
+  width:120px;
+  height: 120px; 
+}
+.progress_canvas2{ 
+  width:120px;
+  height: 120px; 
+} 
+
+.progress_text{ 
+  position: absolute; 
+  display: flex;  
+  align-items: center;
+  justify-content: center
+}
+.progress_info{   
+  font-size: 20rpx;
+  padding-left: 20rpx;
+  letter-spacing: 2rpx
+} 
+.progress_dot{
+  width:6rpx;
+  height: 6rpx;  
+  border-radius: 50%;
+  background-color: #fb9126;
+}
+
+.timer_clock {
+  display: flex;
+  text-align: center;
+  font-size: 30px;
+  color: #f60;
+  margin-top: 0px;
+}
+.courseLogo{
+    width: 400rpx;
+    height: 132rpx;
+    float: left;
+    margin-top: 300rpx;
+    position: relative;
+    box-sizing: border-box;
+    perspective: 800px;
+}
+
+.courseBefore{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+     backface-visibility: hidden; 
+    transition: 0.5s;
+    background-color: pink;
+
+}
+.courseAfter{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    color: #fff;
+    background-color: dodgerblue;
+    font-size: 100rpx;
+    text-align: center;
+    transform: rotateY(-360deg); 
+     backface-visibility: hidden;  
+    transition: 0.5s; 
+
+}
+ .courseLogo:hover .courseBefore{
+    transform: rotateY(0deg);
+}
+.courseLogo:hover .courseAfter{
+    transform: rotateY(360deg);
+}
+
+.content{
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  box-sizing:border-box;
+  position:absolute;
+  padding-bottom: 10rpx;
+  bottom: 10rpx;
+}
+.main-bg{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+.screen-container{
+    padding-top:30rpx;
+    padding-left:5rpx;
+    padding-right:5rpx;
+}
+.screen{
+    background-color:#fff;
+    border-radius:3px;
+    text-align:right;
+    width:720rpx;
+    height:100rpx;
+    line-height:100rpx;
+    padding-left:10rpx;
+    padding-right:10rpx;
+    margin-bottom:30rpx;
+    
+}
+.btnGroup{
+    display:flex;
+    flex-direction:row;
+}
+.item{
+    width:200rpx;
+    min-height:10rpx;
+    margin:5rpx;
+    text-shadow:0 1px 1px rgba(0,0,0,.3);
+    border-radius:5px;
+    text-align:center;
+    line-height:150rpx;
+    display:inline-block;
+}
+.orange{
+    color:#fef4e9;
+    border:solid 1px #da7c0c;
+    background:#EE2A49;
+    width:410rpx;
+    line-height: 150rpx;
+}
+
+.orange2{
+  color:#fef4e9;
+    border:solid 1px #da7c0c;
+    background:#EE2A49;
+    width:620rpx;
+}
+.blue{
+    color:#d9eef7;
+    background:#9DAAAF;
+}

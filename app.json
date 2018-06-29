@@ -1,0 +1,60 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/categary/categary",
+    "pages/account/account",
+    "pages/news/news",
+    "pages/information/information",
+    "pages/logs/logs",
+    "pages/class/class",
+    "pages/my/myclass",
+    "pages/my/favorateClass",
+    "pages/mathgame/mathgame"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "PlusTUT 佳途教育",
+    "navigationBarTextStyle":"black",
+    "navigationBarTextColor":"#ffdb4d"
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#EE962C",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "imgs/home.png",
+        "selectedIconPath": "imgs/home_on.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/categary/categary",
+        "iconPath": "imgs/all.png",
+        "selectedIconPath": "imgs/all_on.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "iconPath": "imgs/account.png",
+        "selectedIconPath": "imgs/account_on.png",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "iconPath": "imgs/form.png",
+        "selectedIconPath": "imgs/form_on.png",
+        "text": "新闻"
+      },
+      {
+        "pagePath": "pages/information/information",
+        "iconPath": "imgs/help.png",
+        "selectedIconPath": "imgs/help_on.png",
+        "text": "关于"
+      }
+    ]
+  },
+  "debug": true
+}

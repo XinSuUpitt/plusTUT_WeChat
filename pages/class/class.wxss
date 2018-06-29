@@ -1,0 +1,67 @@
+.item-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFF;
+  padding-top: 0rpx;
+  padding-bottom: 20rpx;
+  padding-left: 25rpx;
+  align-items: center;
+}
+
+.item-description {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFF;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 15rpx;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.item-teacher-image {
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 45rpx;
+  top: 10rpx;
+  vertical-align: middle;
+}
+
+.item-icon {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.item-bigicon{
+  width: 750rpx;
+  height: 375rpx;
+}
+
+.item-label {
+  flex: 1;
+  font-size: 30rpx;
+  color: #000;
+  margin-left: 10rpx;
+}
+
+.item-label2 {
+  flex: 1;
+  font-size: 30rpx;
+  color: #000;
+  margin-left: 0rpx;
+}
+
+.item-label3 {
+  font-size: 24rpx;
+  color: #EE962C;
+  position: relative;
+  padding-right: 5rpx;
+}
+
+.item-image{
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  padding-right: 10rpx;
+}

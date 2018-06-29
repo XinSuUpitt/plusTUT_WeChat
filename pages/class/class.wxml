@@ -1,0 +1,19 @@
+<scroll-view scroll-y="true" class="class scrollview" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="item-container" style="margin-top: 10rpx;">
+    <image class="item-icon" src="../../imgs/英语.png" />
+    <text class="item-label">{{info.class_name}}</text>
+    <text class="item-label3">点击购买</text>
+    <image class="item-image" src="../../imgs/购买.png"></image>
+  </view>
+
+  <view class="item-container" style="margin-top: 10rpx;">
+    <image class="item-teacher-image" src="{{info.teacher_avator_url}}" />
+    <text class="item-label">授课教师：{{info.teacher_name}}</text>
+  </view>
+
+  <view class="item-description">
+    <text>{{info.description}}</text>
+  </view>
+
+  <image class="floatingActionButton2" src="../../imgs/chat.png" bindtap="onPostClick"/>
+</scroll-view>

@@ -1,0 +1,52 @@
+<!--pages/categary/categary.wxml-->
+<view class="top-tab flex-wrp flex-tab " >
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+    <block>
+      <view wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" class="feed-item-class" bindtap="bindQueTap">
+        <view class="feed-source">
+          <a class="">
+             <view class="avatar">
+              <image src="{{item.teacher_avator_url}}"></image>
+            </view> 
+            <text>课程名称：{{item.class_name}}</text>
+          </a>
+        </view>
+        <view class="feed-content">
+          <view class="question" qid="{{class_id}}">
+            <text>任课教师：{{item.teacher_name}}</text>
+            <!-- <text class="item-label3">查看详情</text> -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="ctnt2 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+    <block>
+      <view wx:for="{{feed_middle}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" class="feed-item-class" bindtap="bindQueTap">
+        <view class="feed-source">
+          <a class="">
+             <view class="avatar">
+              <image src="{{item.teacher_avator_url}}"></image>
+            </view> 
+            <text>课程名称：{{item.class_name}}</text>
+          </a>
+        </view>
+        <view class="feed-content">
+          <view class="question" qid="{{class_id}}">
+            <text>任课教师：{{item.teacher_name}}</text>
+            <!-- <text class="item-label3">查看详情</text> -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <image class="floatingActionButton2" src="../../imgs/chat.png" bindtap="onPostClick"/>
+</scroll-view>

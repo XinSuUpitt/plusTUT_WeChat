@@ -1,0 +1,154 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="search flex-wrp">
+      <view class="search-left flex-item">
+          <image src="../../imgs/search.png"></image>
+          <input placeholder="搜索话题, 问题或人" placeholder-class="search-placeholder"/>
+      </view>
+      <view class="search-right flex-item" bindtap="upper">
+          <!-- <image src="../../imgs/lighting.png"></image> -->
+      </view>
+  </view>
+
+  <swiper class="activity" indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="155"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <navigator url="../news/news" open-type="switchTab">
+    <view class="item-container" style="margin-top: 10rpx;">
+      <image class="item-icon" src="../../imgs/视频.png" />
+      <text class="item-label">佳途频道</text>
+      <text class="item-label3">查看更多</text>
+      <image class="item-image" src="../../imgs/rightarrow.png"></image>
+    </view>
+  </navigator>
+  <block wx:for="{{video}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      <view class="feed-item-index">
+          <view class="feed-source">
+              <a class="">
+                  <view class="avatar">
+                      <image src="{{item.video_avator_url}}"></image>
+                  </view>
+                  <text>{{item.video_description}}</text>
+              </a>
+          </view>
+          <view class="feed-content">
+              <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
+                  <a class="question-link">
+                      <text>{{item.question}}</text>
+                  </a>
+              </view>
+              <!-- <view class="answer-body">
+                  <view bindtap="bindItemTap">
+                      <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+                  </view>
+                  <view class="answer-actions" bindtap="bindItemTap">
+                      <view class="like dot">
+                          <a>{{item.good_num}} 赞同 </a>
+                      </view>
+                      <view class="comments dot">
+                          <a>{{item.comment_num}} 评论 </a>
+                      </view>
+                      <view class="follow-it">
+                          <a>关注问题</a>
+                      </view>
+                  </view>
+              </view> -->
+          </view>
+      </view>
+  </block>
+
+  <navigator url="../mathgame/mathgame">
+    <view class="item-container" style="margin-top: 10rpx;">
+      <image class="item-icon" src="../../imgs/数学.png" />
+      <text class="item-label">今日推荐</text>
+    </view>
+  </navigator>
+  <navigator url="../mathgame/mathgame">
+    <view class="activity" style="margin-top: 0rpx;">
+      <image class="item-bigicon" src="../../imgs/99乘法表.jpeg" />
+    </view>
+  </navigator>
+
+  <navigator url="../submitgank/submitgank?name={{userInfo.nickName}}">
+    <view class="item-container" style="margin-top: 10rpx;">
+      <text class="item-label2">推荐课程</text>
+      <text class="item-label3">查看更多</text>
+      <image class="item-image" src="../../imgs/rightarrow.png"></image>
+    </view>
+  </navigator>
+  <navigator url="../categary/categary" open-type="switchTab">
+    <view class="item-container" style="margin-top: 0rpx;">
+      <image class="item-icon" src="../../imgs/网络课.png" />
+      <text class="item-label">小学课程</text>
+    </view>
+  </navigator>
+  <navigator url="../categary/categary" open-type="switchTab">
+    <view class="item-container" style="margin-top: 0rpx;">
+      <image class="item-icon" src="../../imgs/网络课.png" />
+      <text class="item-label">中学课程</text>
+    </view>
+  </navigator>
+
+  <navigator url="../news/news" open-type="switchTab">
+    <view class="item-container" style="margin-top: 10rpx;">
+      <image class="item-icon" src="../../imgs/阅读.png" />
+      <text class="item-label">热门文章</text>
+      <text class="item-label3">查看更多</text>
+      <image class="item-image" src="../../imgs/rightarrow.png"></image>
+    </view>
+  </navigator>
+  <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      <view class="feed-item-index">
+          <view class="feed-source">
+              <a class="">
+                  <view class="avatar">
+                      <image src="{{item.feed_source_img}}"></image>
+                  </view>
+                  <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
+              </a>
+          </view>
+          <view class="feed-content">
+              <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
+                  <a class="question-link">
+                      <text>{{item.question}}</text>
+                  </a>
+              </view>
+              <view class="answer-body">
+                  <view bindtap="bindItemTap">
+                      <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+                  </view>
+                  <view class="answer-actions" bindtap="bindItemTap">
+                      <view class="like dot">
+                          <a>{{item.good_num}} 赞同 </a>
+                      </view>
+                      <view class="comments dot">
+                          <a>{{item.comment_num}} 评论 </a>
+                      </view>
+                      <view class="follow-it">
+                          <a>关注问题</a>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </block>
+
+  <navigator url="../information/information" open-type="switchTab">
+    <view class="item-container" style="margin-top: 10rpx;">
+      <image class="item-icon" src="../../imgs/短信.png" />
+      <text class="item-label">关于我们</text>
+      <text class="item-label3">查看更多</text>
+      <image class="item-image" src="../../imgs/rightarrow.png"></image>
+    </view>
+  </navigator>
+   
+  <image class="floatingActionButton2" src="../../imgs/chat.png" bindtap="onPostClick"/>
+</scroll-view>
+
+

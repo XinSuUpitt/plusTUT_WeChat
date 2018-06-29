@@ -1,0 +1,24 @@
+<scroll-view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="ctnt0">
+    <block>
+      <view wx:for="{{favorate}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" class="feed-item-class" bindtap="bindQueTap">
+        <view class="feed-source">
+          <a class="">
+             <view class="avatar">
+              <image src="{{item.teacher_avator_url}}"></image>
+            </view> 
+            <text>课程名称：{{item.class_name}}</text>
+          </a>
+        </view>
+        <view class="feed-content">
+          <view class="question" qid="{{class_id}}">
+            <text>任课教师：{{item.teacher_name}}</text>
+            <!-- <text class="item-label3">查看详情</text> -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <image class="floatingActionButton2" src="../../imgs/chat.png" bindtap="onPostClick"/>
+</scroll-view>
