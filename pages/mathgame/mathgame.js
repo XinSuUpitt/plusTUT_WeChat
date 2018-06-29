@@ -3,9 +3,9 @@ var rpn = require("../../utils/rpn.js");
 Page({
   data: {
     clock: '',
-    count: 0, // 设置 计数器 初始为0
+    count: 0, 
     count2: 0,
-    countTimer: null, // 设置 定时器 初始为null
+    countTimer: null,
     countTimer2: null,
     id1: "1",
     id2: "2",
@@ -56,7 +56,6 @@ Page({
     clearInterval(this.countTimer2);
   },
   drawProgressbg: function () {
-    // 使用 wx.createContext 获取绘图上下文 context
     var ctx = wx.createCanvasContext('canvasProgressbg')
     ctx.setLineWidth(1);// 设置圆环的宽度
     ctx.setStrokeStyle('#20183b'); // 设置圆环的颜色
