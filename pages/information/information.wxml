@@ -1,47 +1,63 @@
-<view class="container">
-  <scroll-view scroll-y="true" style="height: 100%;">
+<scroll-view class="container" scroll-y="true" style="height: 100%;">
 
-    <navigator url="../news/news?currentNavtab=2" open-type="switchTab">
-      <view class="item-container" style="margin-top: 2rpx;">
-        <image class="item-icon" src="../../imgs/计算机.png" />
-        <text class="item-label">一对一在线聊天</text>
+  <navigator url="../news/news?currentNavtab=2" open-type="switchTab">
+    <view class="item-container" style="margin-top: 2rpx;">
+      <image class="item-icon" src="../../imgs/计算机.png" />
+      <text class="item-label">一对一在线聊天</text>
+    </view>
+  </navigator>
+
+  <navigator>
+    <view class="item-container" style="margin-top: 30rpx;">
+      <image class="item-icon" src="../../imgs/语文.png" />
+      <text class="item-label">公司简介</text>
+    </view>
+    <text class="item-detail-label">深圳普拉斯图教育科技股份有限公司（PlusTuT）是一家综合型O2O科技教育培训机构。其成员由美国，香港，深圳，北京等地的教育及科技精英组建而成，致力为深港跨境学子提供一站式综合性学习提升及问题解决方案。
+
+机构课程从香港教育体系出发，结合学科特点，辅以题库及线上配套资源，在测，讲，练，考每个环节均有严密的把控，使学子在短时间内提升学习兴趣及对知识体系理解能力，并在所学科目中得到提升。        </text>
+  </navigator>
+
+  <navigator url="../categary/categary" open-type="switchTab">
+    <view class="item-container" style="margin-top: 2rpx;">
+      <image class="item-icon" src="../../imgs/英语.png" />
+      <text class="item-label">师资介绍</text>
+    </view>
+  </navigator>
+
+  <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      <view class="feed-item-class">
+          <view class="feed-source">
+            <a class="">
+              <view class="avatar">
+                <image src="{{item.teacher_avator_url}}"></image>
+              </view> 
+              <text>{{item.teacher_name}}</text>
+            </a>
+          </view>
+          <view class="feed-content">
+            <view class="question" qid="{{class_id}}">
+              <text>{{item.description}}</text>
+            </view>
+          </view>
       </view>
-    </navigator>
+  </block>
 
-    <navigator>
-      <view class="item-container" style="margin-top: 30rpx;">
-        <image class="item-icon" src="../../imgs/语文.png" />
-        <text class="item-label">公司简介</text>
-      </view>
-      <text class="item-detail-label">佳途教育：佳途教育是总部设在美国洛杉矶，教育地点设在深圳的针对中港小学、中学学生的课后教育培训机构。</text>
-    </navigator>
+  <block>
+    <view class="item-container" style="margin-top: 2rpx;" bindtap="bindItemTap">
+      <image class="item-icon" src="../../imgs/数学.png" />
+      <text class="item-label">公司地址</text>
+    </view>
+    <text class="item-detail-label" bindtap="bindItemTap">广东省深圳市海悦华城a座3502室</text>
+    <map class="map" id="map" longitude="114.055122" latitude="22.521677" markers="{{markers}}" scale="15" bindtap="bindItemTap"></map>
+  </block>
 
-    <navigator url="../categary/categary" open-type="switchTab">
-      <view class="item-container" style="margin-top: 2rpx;">
-        <image class="item-icon" src="../../imgs/英语.png" />
-        <text class="item-label">师资介绍</text>
-      </view>
-    </navigator>
-
-    <navigator url="../my/favorateClass">
-      <view class="item-container" style="margin-top: 2rpx;">
-        <image class="item-icon" src="../../imgs/数学.png" />
-        <text class="item-label">公司地址</text>
-      </view>
-      <text class="item-detail-label">广东省深圳市罗湖区</text>
-      <map class="map" id="map" longitude="114.138491" latitude="22.581833" scale="15"></map>
-    </navigator>
-
-    <navigator url="../news/news?currentNavtab=2" open-type="switchTab">
-      <view class="item-container" style="margin-top: 2rpx;">
-        <image class="item-icon" src="../../imgs/阅读.png" />
-        <text class="item-label">联系方式</text>
-      </view>
-      <text class="item-detail-label">电话：18902430450</text>
-      <text class="item-detail-label">微信号：PlusTuT</text>
-    </navigator>
-
-    
-
-  </scroll-view>
-</view>
+  <block>
+    <view class="item-container" style="margin-top: 2rpx;">
+      <image class="item-icon" src="../../imgs/阅读.png" />
+      <text class="item-label">联系方式</text>
+    </view>
+    <text class="item-detail-label" bindtap="bindPhoneTap">电话：18902430450</text>
+    <text class="item-detail-label">微信号：PlusTuT</text>
+    <text class="item-detail-label">邮箱: plustut@126.com</text>
+  </block>
+</scroll-view>

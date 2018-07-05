@@ -8,9 +8,10 @@ Page({
     video: [],
     video_length: 0,
     imgUrls: [
-      '../../imgs/24213.jpg',
-      '../../imgs/24280.jpg',
-      '../../imgs/1444983318907-_DSC1826.jpg'
+      '../../imgs/plustut.jpeg',
+      '../../imgs/tony.jpg',
+      '../../imgs/duke.png',
+      '../../imgs/wendy.png'
     ],
     indicatorDots: false,
     autoplay: true,

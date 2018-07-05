@@ -27,6 +27,7 @@ var middle = require('../data/data_categary_middle.js')
 var video = require('../data/data_video.js')
 var myclass = require('../data/data_account_myclass.js')
 var myFavorateClass = require('../data/data_account_myfavoriteclass.js')
+var informationTeacher = require('../data/data_information_teacher.js')
 
 function getData(url) {
   return new Promise(function (resolve, reject) {
@@ -84,6 +85,10 @@ function getMyFavorateClass() {
   return myFavorateClass.myFavorateClass
 }
 
+function getInformationTeacher() {
+  return informationTeacher.information_teacher;
+}
+
 
 
 module.exports.getData = getData;
@@ -96,3 +101,4 @@ module.exports.getMiddle = getMiddle;
 module.exports.getVideo = getVideo;
 module.exports.getMyClass = getMyClass;
 module.exports.getMyFavorateClass = getMyFavorateClass;
+module.exports.getInformationTeacher = getInformationTeacher;
