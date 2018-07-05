@@ -11,9 +11,20 @@
         <canvas class="progress_canvas2"   canvas-id="canvasProgress2">  </canvas>      
       </view>
     </view>
-    <view class="item-container" style="margin-top: -70rpx;">
+    <view class="item-container" style="margin-top: -40rpx;">
       <text class="timer_clock">
         {{clock}} {{micro_second}}
+      </text>
+      <text class="timer_clock_2">
+        {{clock2}} {{micro_second}}
+      </text>
+    </view>
+    <view class="item-container" style="margin-top: -60rpx;">
+      <text class="timer_clock">
+        本题倒计时
+      </text>
+      <text class="timer_clock_2">
+        总倒计时
       </text>
     </view>
   </view>

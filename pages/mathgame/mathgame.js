@@ -1,9 +1,12 @@
 const app = getApp()
 var rpn = require("../../utils/rpn.js");
 var total_micro_second = 5 * 1000;
+var total_micro_second_2 = 25 * 1000;
+var toast = require('../../utils/toast.js');
 Page({
   data: {
     clock: '',
+    clock2: '',
     count: 0, 
     count2: 0,
     countTimer: null,
@@ -43,12 +46,14 @@ Page({
           "9","18","27","36","45","54","63","72","81"],
     nineninealgo: "",
     ninenineans: "",
+    correct: 0,
     random: Math.floor(Math.random() * 81)
   },
   onLoad: function () {
     this.setData({
       nineninealgo: this.data.ninenine[this.data.random],
-      ninenineans: this.data.ans[this.data.random]
+      ninenineans: this.data.ans[this.data.random],
+      correct: 0
     })
   },
   onUnload: function () {
@@ -79,6 +84,7 @@ Page({
     this.countInterval();
     this.countInterval2();
     this.countdown();
+    this.countdown2();
   },
   drawCircle: function (step) {
     var context = wx.createCanvasContext('canvasProgress');
@@ -141,8 +147,8 @@ Page({
 
   countInterval2: function() {
     this.countTimer2 = setInterval(() => {
-      if (this.data.count2 <= 50 * 10) {
-        this.drawCircle2(this.data.count2 / (50 * 10 / 2));
+      if (this.data.count2 <= 50 * 5) {
+        this.drawCircle2(this.data.count2 / (50 * 5 / 2));
         this.data.count2++;
       } else {
         this.setData({
@@ -166,7 +172,7 @@ Page({
       data = 0;
     } else if (id == this.data.id12){
       if (data == this.data.ninenineans) {
-        
+        this.data.correct++;
       }
       rand = Math.floor(Math.random() * 81);
       this.setData({
@@ -188,7 +194,7 @@ Page({
   countdown: function() {
     var self = this;
     this.setData({
-      clock: this.dateformat(total_micro_second)
+      clock: this.dateformat(total_micro_second),
     });
     if (total_micro_second <= 0) {
       this.setData({
@@ -199,6 +205,26 @@ Page({
     setTimeout(function () {
       total_micro_second -= 10;
       self.countdown();
+    }
+      , 10)
+  },
+  countdown2: function () {
+    var self = this;
+    this.setData({
+      clock2: this.dateformat(total_micro_second_2),
+    });
+    if (total_micro_second_2 <= 0) {
+      this.setData({
+        clock2: "游戏结束,正确：" + this.data.correct 
+      });
+      clearInterval(this.countTimer);
+      clearInterval(this.countTimer2);
+      toast.show('游戏结束', this.data.correct);
+      return;
+    }
+    setTimeout(function () {
+      total_micro_second_2 -= 10;
+      self.countdown2();
     }
       , 10)
   },
@@ -214,6 +240,9 @@ Page({
     var sec = (second - hr * 3600 - min * 60);// equal to => var sec = second % 60;
     // 毫秒位，保留2位
     var micro_sec = Math.floor((micro_second % 1000) / 10);
+    if (micro_sec < 10) {
+      micro_sec = "0" + micro_sec;
+    }
     // return hr + ":" + min + ":" + sec + " " + micro_sec;
     return sec + "." + micro_sec + "s";
   }
