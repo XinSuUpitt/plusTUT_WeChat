@@ -9,7 +9,9 @@
     "pages/class/class",
     "pages/my/myclass",
     "pages/my/favorateClass",
-    "pages/mathgame/mathgame"
+    "pages/mathgame/mathgame",
+    "pages/information/chatLobby/chatLobby",
+    "pages/chat/chat"
   ],
   "window":{
     "backgroundTextStyle":"light",

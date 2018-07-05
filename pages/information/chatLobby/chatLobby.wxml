@@ -1,0 +1,38 @@
+
+<view class="container">
+  <scroll-view scroll-y="true" style="height: 100%;">
+    <view class="header">
+      <view class="header-container">
+        <image class="header-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="header-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <image class="header-load" src="../../../imgs/more.png"></image>
+      <view class="header-container">
+        <image class="header-avatar" src="../../../imgs/plustut.jpeg" background-size="cover"></image>
+        <text class="header-nickname">PlusTuT</text>
+      </view>
+    </view>
+    
+    
+    <block>
+      <view class="item-container" style="margin-top: 30rpx;">
+        <image class="item-icon" src="../../../imgs/数学.png" />
+        <text class="item-label">进入公众号</text>
+      </view>
+    </block>
+
+    <block>
+      <view class="item-container" style="margin-top: 2rpx;" bindtap="bindPhoneTap">
+        <image class="item-icon" src="../../../imgs/语文.png" />
+        <text class="item-label">拨打电话</text>
+      </view>
+    </block>
+
+    <navigator url="../../chat/chat">
+      <view class="item-container" style="margin-top: 2rpx;">
+        <image class="item-icon" src="../../../imgs/英语.png" />
+        <text class="item-label">选择老师</text>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>

@@ -32,7 +32,7 @@ Page({
     wx.openLocation({
       latitude: 22.521677,
       longitude: 114.055122,
-      name: "plusTut",
+      name: "plusTuT",
       address: "广东省深圳市海悦华城a座3502室",
       scale: 1
     })

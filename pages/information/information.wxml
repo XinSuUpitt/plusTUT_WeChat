@@ -1,13 +1,13 @@
 <scroll-view class="container" scroll-y="true" style="height: 100%;">
 
-  <navigator url="../news/news?currentNavtab=2" open-type="switchTab">
+  <navigator url="../information/chatLobby/chatLobby">
     <view class="item-container" style="margin-top: 2rpx;">
       <image class="item-icon" src="../../imgs/计算机.png" />
       <text class="item-label">一对一在线聊天</text>
     </view>
   </navigator>
 
-  <navigator>
+  <block>
     <view class="item-container" style="margin-top: 30rpx;">
       <image class="item-icon" src="../../imgs/语文.png" />
       <text class="item-label">公司简介</text>
@@ -15,14 +15,14 @@
     <text class="item-detail-label">深圳普拉斯图教育科技股份有限公司（PlusTuT）是一家综合型O2O科技教育培训机构。其成员由美国，香港，深圳，北京等地的教育及科技精英组建而成，致力为深港跨境学子提供一站式综合性学习提升及问题解决方案。
 
 机构课程从香港教育体系出发，结合学科特点，辅以题库及线上配套资源，在测，讲，练，考每个环节均有严密的把控，使学子在短时间内提升学习兴趣及对知识体系理解能力，并在所学科目中得到提升。        </text>
-  </navigator>
+  </block>
 
-  <navigator url="../categary/categary" open-type="switchTab">
+  <block>
     <view class="item-container" style="margin-top: 2rpx;">
       <image class="item-icon" src="../../imgs/英语.png" />
       <text class="item-label">师资介绍</text>
     </view>
-  </navigator>
+  </block>
 
   <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
       <view class="feed-item-class">
