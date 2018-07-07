@@ -1,5 +1,17 @@
 <!--index.wxml-->
+<view class="userinfo" bindtap="login">
+    <image
+        class="userinfo-avatar"
+        src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"
+        background-size="cover"
+    ></image>
+    <view>
+        <text class="userinfo-nickname">{{logged ? userInfo.nickName : '点击测试登录接口'}}</text>
+        <text class="userinfo-nickname" wx:if="{{logged}}">{{userInfo.lastLoginTime}}</text>
+    </view>
+</view>
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  
   <view class="search flex-wrp">
       <view class="search-left flex-item">
           <image src="../../imgs/search.png"></image>
