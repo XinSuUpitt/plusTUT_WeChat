@@ -135,6 +135,26 @@ Page({
         console.log('登录失败', error)
       }
     })
+  },
+
+  upper: function() {
+    wx.request({
+      url: 'https://192.168.0.106:8888/getTeachers',
+      data: {},
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+
+        console.log(res.data)
+        that.setData({
+          Industry: res.data //设置数据
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
   }
 
 
