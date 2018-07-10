@@ -22,7 +22,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    teachers: []
   },
   //事件处理函数
   bindItemTap: function () {
@@ -138,21 +139,20 @@ Page({
   },
 
   upper: function() {
+
+    var that = this
     wx.request({
-      url: 'https://192.168.0.106:8888/getTeachers',
-      data: {},
-      header: {
-        'content-type': 'application/json'
-      },
+      url: 'http://localhost:3000/api/getteachers',
+      method: 'GET',
       success: function (res) {
 
-        console.log(res.data)
+        console.log('teachers', res.data)
         that.setData({
-          Industry: res.data //设置数据
+          teachers: res.data //设置数据
         })
       },
       fail: function (err) {
-        console.log(err)
+        console.log('result error', err)
       }
     })
   }

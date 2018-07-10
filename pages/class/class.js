@@ -16,8 +16,21 @@ Page({
     var that = this
     var info = JSON.parse(options.info);
     var idx = options.idx;
-    this.setData({
-      info: info[idx]
-    });
+    // this.setData({
+    //   info: info[idx]
+    // });
+    wx.request({
+      url: 'http://localhost:3000/api/get_elementaryclasses',
+      method: 'GET',
+      success: function (res) {
+        console.log('elementary classes', res.data)
+        that.setData({
+          info: res.data[0] //设置数据
+        })
+      },
+      fail: function (err) {
+        console.log('error', err)
+      }
+    })
   }
 })
