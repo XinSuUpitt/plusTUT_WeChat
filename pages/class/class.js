@@ -20,7 +20,7 @@ Page({
     //   info: info[idx]
     // });
     wx.request({
-      url: 'http://localhost:3000/api/get_elementaryclasses',
+      url: 'http://localhost:3000/api/get_classes',
       method: 'GET',
       success: function (res) {
         console.log('elementary classes', res.data)

@@ -115,35 +115,32 @@
       <image class="item-image" src="../../imgs/rightarrow.png"></image>
     </view>
   </navigator>
-  <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+  <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class="feed-item-index">
           <view class="feed-source">
               <a class="">
                   <view class="avatar">
-                      <image src="{{item.feed_source_img}}"></image>
+                      <image src="{{item.author_avator_url}}"></image>
                   </view>
-                  <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
+                  <text>{{item.author_name}}</text>
               </a>
           </view>
           <view class="feed-content">
               <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
                   <a class="question-link">
-                      <text>{{item.question}}</text>
+                      <text>{{item.article_name}}</text>
                   </a>
               </view>
               <view class="answer-body">
-                  <view bindtap="bindItemTap">
-                      <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+                  <view data-url="{{item.article_url}}" bindtap="bindItemTap">
+                      <text class="answer-txt" aid="{{answer_id}}">{{item.description}}</text>
                   </view>
-                  <view class="answer-actions" bindtap="bindItemTap">
+                  <view class="answer-actions">
                       <view class="like dot">
-                          <a>{{item.good_num}} 赞同 </a>
+                          <a>{{item.browse_time}} 浏览 </a>
                       </view>
                       <view class="comments dot">
-                          <a>{{item.comment_num}} 评论 </a>
-                      </view>
-                      <view class="follow-it">
-                          <a>关注问题</a>
+                          <a>{{item.like_time}} 喜欢 </a>
                       </view>
                   </view>
               </view>

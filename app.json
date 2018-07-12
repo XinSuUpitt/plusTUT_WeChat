@@ -11,7 +11,8 @@
     "pages/my/favorateClass",
     "pages/mathgame/mathgame",
     "pages/information/chatLobby/chatLobby",
-    "pages/chat/chat"
+    "pages/chat/chat",
+    "pages/webview/webview"
   ],
   "window":{
     "backgroundTextStyle":"light",

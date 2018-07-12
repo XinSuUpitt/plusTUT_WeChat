@@ -44,9 +44,16 @@ app.get('/api/getteachers', function (req, res) {
   });
 });
 
-app.get('/api/get_elementaryclasses', function(req, res) {
+app.get('/api/get_classes', function(req, res) {
   var db = getDb();
-  db.query('select * from elementaryClasses', null, function(err, result) {
+  db.query('select * from classes', null, function(err, result) {
+    res.json(result);
+  });
+});
+
+app.get('/api/get_articles', function(req, res) {
+  var db = getDb();
+  db.query('select * from articles', null, function(err, result) {
     res.json(result);
   });
 });

@@ -26,9 +26,10 @@ Page({
     teachers: []
   },
   //事件处理函数
-  bindItemTap: function () {
+  bindItemTap: function (event) {
+    console.log('item', event.currentTarget.dataset.url);
     wx.navigateTo({
-      url: '../answer/answer'
+      url: '../webview/webview?url=' + event.currentTarget.dataset.url
     })
   },
   bindQueTap: function () {
@@ -72,16 +73,27 @@ Page({
 
   //使用本地 fake 数据实现刷新效果
   refresh: function () {
-    var feed = util.getData2();
-    var feed_data = feed.data;
     var video = util.getVideo();
     var video_data = video.data;
     this.setData({
-      feed: feed_data,
-      feed_length: feed_data.length,
       video: video_data,
       video_length: video_data.length
     });
+    var that = this
+    wx.request({
+      url: 'http://localhost:3000/api/get_articles',
+      method: 'GET',
+      success: function (res) {
+        console.log('articles', res.data)
+        that.setData({
+          feed: res.data, //设置数据
+          feed_length: res.data.length
+        })
+      },
+      fail: function (err) {
+        console.log('result error', err)
+      }
+    })
   },
 
   //使用本地 fake 数据实现继续加载效果
