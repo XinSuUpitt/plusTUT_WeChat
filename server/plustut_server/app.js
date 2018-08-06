@@ -18,10 +18,10 @@ var mysql = require('mysql');
 
 function getDb() {
   var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
+    host: 'plustut.cxsxaix1kweg.ap-northeast-2.rds.amazonaws.com',
+    user: 'xinsu',
     password: 'catherine100529',
-    database: 'plusTuT',
+    database: 'plustut',
     multipleStatements: true
   });
   connection.connect();
